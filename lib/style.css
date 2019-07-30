@@ -1,0 +1,2220 @@
+/* =====================   CSS RESET SECTION ==== */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b2 | 201101
+   NOTE: THIS IS A BETA VERSION (see previous line)
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+	
+	
+	
+	@font-face
+	{
+		font-family: 'open_sanslight';		
+		src: url('fonts/OpenSans-Light-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	
+	
+	@font-face
+	{
+		font-family: 'open_sansregular';		
+		src: url('fonts/OpenSans-Regular-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	
+	
+	@font-face
+	{
+		font-family: 'open_sansbold';		
+		src: url('fonts/OpenSans-Bold-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	
+	
+	.metadataLink
+	{
+/*		text-decoration:none;
+		font-weight:bolder;
+		font-style:italic;*/
+		color:white; 
+	}
+	
+	
+
+	#legendTip
+	{
+		position:absolute;
+		left:100px;
+		top:10px;
+		width:125px;
+		height:70px;
+		background-color:rgba(245,245,245,1.0);
+		border-radius:5px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px;
+		pointer-events:none;
+	}
+	
+	
+	#tooltipText
+	{
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:5px;
+		top:5px;
+	}
+	
+			
+	
+	#BGTilesCheck
+	{
+		position:absolute;
+		left:140px;
+		top:210px;
+	}	
+	
+
+
+	#paraBGTiles
+	{	
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:20px;
+		top:210px;		
+	}
+	
+			
+	
+	#colourInvertCheck
+	{
+		position:absolute;
+		left:140px;
+		top:230px;
+	}	
+	
+
+
+	#paraInvertColors
+	{	
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:20px;
+		top:230px;		
+	}
+	
+	
+	
+	#hoverPrompt
+	{
+		display:none;		
+		position:absolute;
+		left:-5px;
+		top:23px;	
+		color:#0581c9;
+		font-size:15px;
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;				
+	}
+	
+	
+	
+	#fixedRangesLabel
+	{
+		position:absolute;
+		top:4px;
+		left:105px;
+		display:none;
+		z-index:+10;
+	}
+	
+	
+	
+	#fixedRanges
+	{
+		position:absolute;
+		top:4px;
+		left:190px;
+		display:none;
+		z-index:+10;
+		disabled:false;
+		checked:false;
+	}
+	
+	
+	
+	#fixedYear
+	{
+		position:absolute;
+		top:4px;
+		left:210px;
+		display:none;
+		z-index:+10;
+	}
+	
+	
+	
+	#bannerTitleTemp
+	{
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+		font-size:9px;	
+		display:inline;
+	}
+	
+	
+	
+	#bannerTitle
+	{
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+		font-size:9px;	
+		display:inline;
+	}
+						
+	
+	#intermediateTitle
+	{
+		position:absolute;
+		left:5px;
+		top:-10px;
+		color:#FF0000;
+		z-index:+10;
+	}
+
+
+		
+	#ieMsg
+	{
+		margin: 0px auto;
+		width:940px;
+		width:700px;
+		overflow:hidden;
+	}
+
+
+
+	#browserMsg
+	{
+		position:absolute;
+		left:250px;
+		top:150px;
+		height:325px;
+		width:400px;
+		background-color:rgb(235,235,235);
+		border-color:rgba(102,102,102,1);
+		border-width:5px;
+		padding:50px;
+		z-index:2;
+	}
+
+
+
+	#browserImg
+	{
+		position:absolute:
+		left:0px;
+		top:0px;
+		width:350px;
+		border-width:5px;
+		z-index:0;
+	}
+	
+
+
+	#thumbNail
+	{
+		opacity:0.5;
+		filter:alpha(opacity=50);
+		z-index:0;
+	}
+	
+	
+		
+	#clearBtn_ts
+	{
+		position:absolute;
+		top:505px;
+		left:378px;			
+		width:160px;
+		height:60px;		
+		background:transparent url('images/clearlarge.png') center top no-repeat;
+		z-index:4;
+		display:inline;
+	}
+
+
+
+	#clearBtn_ts:hover
+	{
+		float:right;
+		background:transparent url('images/clearlargeorange.png') center top no-repeat;
+	}
+	
+	
+		
+	#clearBtn_sy
+	{
+		position:absolute;
+		top:539px;
+		left:378px;			
+		width:160px;
+		height:60px;		
+		background:transparent url('images/clearlarge.png') center top no-repeat;
+		z-index:4;
+		display:inline;
+	}
+	
+	
+		
+	#clearBtn_sy:hover
+	{
+		float:right;
+		background:transparent url('images/clearlargeorange.png') center top no-repeat;
+	}
+	
+		
+	
+	#clearBg /* main screen */
+	{
+		position:absolute;
+		top:530px;
+		left:375px;
+		width:150px;
+		height:28px;
+		fill-color:white;
+		background-color:rgba(255,255,255,0.50);
+		z-index:+2;
+		box-shadow: 0 0 6px rgba(0,0,0,0.2);
+		padding:40px 20px 10px 0px;
+		display:none;
+	}
+	
+		
+		
+	#close
+	{
+		display:block;
+		margin:5px 5px 5px 5px;
+		width:14px;
+		height:14px;
+		float:right;
+		background-position: right;
+		background:transparent url('images/closewhite.png') center top no-repeat;
+	}
+	
+		
+		
+	#infoclose
+	{
+		display:block;
+		margin:5px 5px 5px 5px;
+		width:14px;
+		height:14px;
+		float:right;
+		background-position: right;
+		background:transparent url('images/closegrey.png') center top no-repeat;
+	}
+
+
+
+	#close:hover
+	{
+		float:right;
+		background:transparent url('images/closeorange.png') center top no-repeat;
+	}
+	
+	
+	
+	.xAxisText
+	{
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		font-size:9px;	
+		display:inline;		
+	}
+	
+
+
+	.toRemove
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:9px;	
+		display:inline;		
+	}
+
+
+
+	#embedBtn
+	{
+		position:absolute;
+		left:260px;
+		top:60px;
+		width:75px;
+		height:20px;
+		font-size:9px;
+	}
+	
+	
+	
+	#loopLabel
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:12px;
+		position:absolute;
+		left:452px;
+		top:20px;
+		display:none;
+	}
+	
+	
+	
+	#loop
+	{
+		position:absolute;
+		left:525px;
+		top:18px;
+		display:none;
+	}
+		
+	
+	
+	#boundariesLabel
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:12px;
+		position:absolute;
+		left:452px;
+		top:10px;
+	}
+	
+	
+	
+	#boundaries
+	{
+		position:absolute;
+		left:525px;
+		top:8px;
+
+/*					$("#boundaries").css( "top", "38px" );*/		
+	}
+	
+	
+	
+	
+	#bannerTemp
+	{
+		position:absolute;
+		left:0px;	
+		top:0px;	
+		height:74px;
+		width: 930px;
+		background:#0581c9;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		font-size:20px;
+		padding:10px 0px 10px 10px;
+		color:#fff;
+		box-shadow: 0 0 6px rgba(0,0,0,0.4);
+	}
+	
+	
+	
+	#bannerTemp h2
+	{
+		position:absolute;
+		top:5px;
+		font-size:28px;			
+	}
+	
+	
+	
+	#bannerTemp p
+	{
+		position:absolute;
+		top:40px;
+		font-size:14px;
+	}
+	
+	
+	
+	#banner
+	{
+		position:absolute;
+		left:0px;	
+		top:0px;	
+		height:74px;
+		width: 930px;
+		background:#0581c9;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		font-size:20px;
+		padding:10px 0px 10px 10px;
+		color:#fff;
+		box-shadow: 0 0 6px rgba(0,0,0,0.4);
+		z-index:+10;
+	}
+	
+	
+	
+	#banner h2
+	{
+		position:absolute;
+		top:5px;
+		font-size:28px;			
+	}
+	
+	
+	
+	#banner p
+	{
+		position:absolute;
+		top:40px;
+		font-size:14px;
+	}
+	
+	
+	
+	#twitter
+	{
+		position:absolute;
+		right:10px;
+		top:2px;
+		display:block;
+		margin:2px 5px 5px 5px;
+		width:20px;
+		height:20px;
+		background-position: right;
+		background:transparent url('images/twit-white.png') center top no-repeat;
+	}
+	
+	
+	
+	#twitter:hover
+	{		
+		float:right;
+		background:transparent url('images/twit-orange.png') center top no-repeat;
+	}
+	
+	
+	
+	#face
+	{
+		position:absolute;
+		right:35px;
+		top:2px;
+		display:block;
+		margin:2px 5px 5px 5px;
+		width:20px;
+		height:20px;
+		background-position: right;
+		background:transparent url('images/facewhite.png') center top no-repeat;
+	}
+	
+	
+	
+	#face:hover
+	{
+		float:right;
+		background:transparent url('images/faceorange.png') center top no-repeat;
+	}
+	
+	
+	
+	#helpimg
+	{
+		position:absolute;
+		right:140px;
+		top:3px;		
+		display:block;
+		margin:2px 5px 5px 5px;
+		width:30px;
+		height:20px;
+		background-position: right;
+		z-index:10;
+		background:transparent url('images/helpwhite.png') center top no-repeat;
+	}
+	
+	
+	
+	#helpimg:hover
+	{
+		float:right;
+		background:transparent url('images/helporange.png') center top no-repeat;
+	}
+	
+	
+	
+	#infoimg
+	{
+		position:absolute;
+		right:110px;
+		top:2px;		
+		display:block;
+		margin:2px 5px 5px 5px;
+		width:20px;
+		height:20px;
+		background-position: right;
+		background:transparent url('images/infowhite.png') center top no-repeat;
+	}
+	
+	
+	
+	#infoimg:hover
+	{
+		float:right;
+		background:transparent url('images/infoorange.png') center top no-repeat;
+	}
+	
+	
+	
+	#graphTypeLabel
+	{
+		position:absolute;
+		left:185px;
+		top:0px;	
+		color:#0581c9;
+		font-size:10px;
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;		
+	}
+
+		
+
+	#embedbox p
+	{
+		font-size:12px;
+		color:#fff;
+	}
+	
+	
+
+	#dataInfo
+	{
+		position:absolute;
+		left:8px;
+		top:40px;
+		z-index:15;	
+	}
+	
+
+
+	#infoPara
+	{
+		position:absolute;
+		left:10px;
+		top:20px;
+		z-index:15;
+		font-size:15px;
+		color:#fff;	
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+	}
+	
+	
+
+	#infoParaInfo
+	{
+		position:absolute;
+		left:10px;
+		top:50px;
+		z-index:15;
+		font-size:11px;
+		color:#fff;	
+		padding-right:15px;
+	}
+	
+	
+
+	#embedPara
+	{
+		position:absolute;
+		left:10px;
+		top:20px;
+		z-index:15;			
+	}
+	
+	
+
+	#embedurl
+	{
+		width:360px;
+		color:#666;
+		position:absolute;
+		left:10px;
+		top:35px;
+		z-index:15;
+	}
+	
+	
+
+	#embedPara2
+	{
+		position:absolute;
+		left:10px;
+		top:90px;
+		z-index:15;			
+	}
+	
+	
+
+	#embedurl2
+	{
+		width:360px;
+		color:#666;
+		position:absolute;
+		left:10px;
+		top:105px;
+		z-index:15;			
+	}
+	
+	
+	
+	#infoBox:hover
+	{
+		
+		float:right;
+		background:transparent url('images/infoorange.png') center top no-repeat;
+	}
+	
+	
+	
+	#embed
+	{
+		position:absolute;
+		right:60px;
+		top:2px;
+		display:block;
+		margin:2px 5px 5px 5px;
+		width:40px;
+		height:20px;
+		background-position: right;
+		background:transparent url('images/embedwhite.png') center top no-repeat;
+	}
+	
+	
+	
+	#embed:hover
+	{
+		
+		float:right;
+		background:transparent url('images/embedorange.png') center top no-repeat;
+	}
+
+
+
+	#line
+	{
+		position:absolute;
+		right:0px;
+		top:27px;
+		width:255px;
+		display:block;
+		height:1px;
+		background:transparent url('images/white.png');
+		pointer-events:none;
+	}
+	
+	
+	
+	#attribution
+	{
+		background-color: rgba(255, 255, 255, 0.7);
+		margin: 0;
+		width:365px;
+		padding: 0 5px;
+		color: #333;
+		font-size: 11px;
+		box-shadow: none;
+		position:absolute;
+		bottom:1px;
+		left:565px;
+	}
+	
+	
+	
+	.attribution
+	{
+		color:#0581c9;
+	}
+	
+	
+	
+	#bannersub
+	{
+		position:absolute;
+		left:556px;	
+		top:64px;	
+		height:30px;
+		width: 384px;
+		background:#0581c9;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		font-size:20px;
+		color:#fff;
+		box-shadow: -1px 1px 2px rgba(0,0,0,0.2);
+	}
+	
+	
+	
+	#side
+	{
+		position:absolute;
+		top:94px;
+		left:556px;
+		background: rgba(255,255,255,0.6);
+		height:540px;
+		width:385px;
+	}
+	
+	
+	
+	#footer
+	{
+		position:absolute;
+		left:0px;	
+		top:661px;	
+		height:37px;
+		width:940px;
+		background:#fff;		
+		z-index:8;
+		border-top: 1px solid #0581c9;
+	}
+
+
+
+	#historyBtn
+	{
+		position:absolute;
+		left:410px;	
+		top:60px;
+		display:inline;	
+		disabled:true;	
+		width:90px;
+		height:20px;
+		font-size:9px;
+		disabled:true;			
+	}
+	
+	
+
+	#geoUnitsList
+	{
+		position:absolute;
+		left:240px;	
+		top:60px;
+		width:150px;
+		height:22px;
+		font-size:12px;
+		color:#00F;
+		border:0px;
+	}
+
+
+
+	mainBody
+	{
+		background-color:white;
+	}
+
+
+
+	#wrapper
+	{
+	
+	}
+	
+	
+	
+	#demo /* main screen */
+	{
+		font-size:9px;
+		font-weight:bolder;
+		position:absolute;
+		left:430px;	
+		top:0px;
+	}		
+	
+	
+	
+	#metadatalabel /* main screen */
+	{
+		position:absolute;
+		left:570px;
+		top:38px;
+		font-size:12px;
+		color:#fff;		
+	}			
+	
+	
+	
+	#metadatalabel:hover /* main screen */
+	{
+		color:#EA5B0C;	
+		text-decoration:none;	
+	}			
+	
+	
+	
+	#metadatalabel:link  /* main screen */
+	{
+		color:#fff;	
+		text-decoration:none;	
+	}			
+	
+	
+	
+	#dv-droplabel /* main screen */
+	{
+		position:absolute;
+		left:755px;
+		top:38px;
+		font-size:12px;
+		color:#fff;
+		z-index:+10;		
+	}		
+	
+	
+	
+	#dv-drop /* main screen */
+	{
+		position:absolute;
+		left:755px;
+		top:63px;
+		width:170px;
+		font-size:11px;
+		height:22px;
+		border:0px;
+		color:#666;	
+		padding:.3em;/.1em;
+		z-index:+10;
+	}	
+	
+	
+	
+	#geoUnit-drop /* main screen */
+	{
+		position:absolute;
+		left:570px;
+		top:63px;
+		width:180px;
+		height:22px;
+		font-size:11px;
+		border:0px;
+		color:#666;
+		padding:.3em;/.1em;	
+/*		text-indent: 6px;*/
+		z-index:+10;
+	}
+	
+
+
+	#map /* main screen */
+	{
+		position:absolute;
+/*		top:0px;*/
+		top:60px;
+		left:0px;
+		width:560px;
+/*		height: 620px;*/
+		height: 560px;
+		border-radius:5px;
+	}
+	
+	
+	
+	#mapControlsDiv
+	{
+		position:absolute;
+		top:620px;
+		background: rgba(255,255,255,0.85);
+		height:40px;
+		width:940px;
+		z-index:7;
+		
+	}
+	
+	
+	
+	#timeSlider /* main screen */
+	{
+		position:absolute;
+		width:325px;
+		height:15px;
+		left:100px;
+		top:22px;
+		display:none;
+	}	
+	
+	
+	
+	#startYear /* main screen */
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:12px;
+		position:absolute;
+		left:85px;
+		top:45px;	
+		z-index:8;
+		display:none;
+	}	
+	
+	
+	
+	#currentYearBg /* main screen */
+	{
+		position:absolute;
+		top:115px;
+		left:430px;
+		width:95px;
+		height:0px;
+		fill-color:white;
+		background-color:rgba(255,255,255,0.50);
+		z-index:+2;
+		box-shadow: 0 0 6px rgba(0,0,0,0.2);
+		padding:40px 20px 10px 0px;
+		display:none;
+	}			
+	
+	
+	
+	#currentYear /* main screen */
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-weight:normal;
+		font-size:26px;
+		position:absolute;
+		top:120px;
+		left:412px;				
+		z-index:8;
+		display:none;
+	}	
+	
+	
+	
+	#fixedDivisions1 /* main screen */
+	{
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+		font-weight:normal;
+		font-size:10px;
+		position:absolute;
+		top:190px;
+		left:412px;				
+		display:none;
+		z-index:+2;
+		color:#0581c9;
+	}	
+	
+	
+	
+	#fixedDivisions2 /* main screen */
+	{
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+		font-weight:normal;
+		font-size:10px;
+		position:absolute;
+		top:205px;
+		left:437px;				
+		display:none;
+		z-index:+2;
+		color:#0581c9;
+	}	
+	
+	
+	
+	#fixedDivisionsBg /* main screen */
+	{
+		position:absolute;
+		top:185px;
+		left:405px;
+		width:140px;
+		height:40px;
+		fill-color:white;
+		background-color:rgba(255,255,255,0.50);
+		z-index:0;
+		box-shadow: 0 0 6px rgba(0,0,0,0.2);
+		display:none;
+	}	
+	
+	
+	
+	#endYear /* main screen */
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:12px;
+		position:absolute;
+		left:410px;
+		top:45px;	
+		z-index:8;
+		display:none;
+	}
+	
+	
+	
+	#PreviousBtn /* main screen */
+	{
+		position:absolute;
+		left:875px;
+		top:730px;	
+		width:75px;
+		height:20px;
+		font-size:9px;
+	}
+	
+	
+	
+	#PlayPauseBtn /* main screen */
+	{
+		position:absolute;
+		display:inline-block;
+		left:-25px;
+		top:-17px;	
+		width:100px;
+		height:100px;
+		float:right;
+		background-position: right;
+		background:transparent url('images/playlarge.png') center top no-repeat;
+		opacity:0.4;
+		display:none;
+		
+	}
+	
+	
+	
+	#PlayPauseBtn:hover
+	{
+		opacity:1;
+	}
+	
+
+	
+	#NextBtn /* main screen */
+	{
+		position:absolute;
+		left:955px;
+		top:730px;	
+		width:75px;
+		height:20px;
+		font-size:9px;
+	}
+	
+	
+		
+	.info /* main screen - inner dynamic Div to 'map'*/
+	{
+		padding: 6px 8px;
+		font-size:12px;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		position:relative;
+		left:-10px;
+		top:30px;
+		width:330px;
+	}
+	
+	
+		
+	.selectedLADinfo /* main screen - inner dynamic Div to 'map'*/
+	{
+		padding: 6px 8px;
+		font-size:10px/12px;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		background: rgba(255,255,255,1.0);
+		border:1px solid rgba(192,192,192, 1);
+		border-radius: 0px;
+		position:absolute;
+		left:55px;
+		top:655px;
+		z-index:8;
+	}
+	
+	
+
+	#loading
+	{
+		position:absolute;
+		top:0px;
+		left:0px;
+	}
+	
+	
+
+	#dataLoadingGif
+	{
+		position:absolute;	
+		top:350px;
+		left:475px;
+	}
+
+
+
+	#dataLoadingLbl
+	{
+		text-align:center;
+		position:absolute;
+		top:450px;
+		left:375px;
+		font-size:14px;	
+	}
+	
+		
+			
+	.info h4 /* main screen - inner dynamic Div to 'map'*/
+	{
+		margin:0 0 5px;
+		color:#0581c9;
+		font-size:17px;
+		position:absolute;
+		top:18px;
+		left:10px;					
+	}
+
+
+
+	#infobox
+	{
+		position:absolute;
+		right:0px;
+		top:95px;
+		height:533px;
+		width:384px;
+		display:block;
+		background:rgba(22,129,196,1.0);
+		z-index:+50;
+		padding-left:25px;	
+	}
+	
+	
+	
+	#areaselect_thumbNail
+	{
+		width:153x;
+		height:23px;		
+	}
+	
+	
+	
+	#geosearch_thumbNail
+	{
+		width:190x;
+		height:20px;		
+	}
+	
+	
+	
+	#help_thumbNail
+	{
+		width:35px;
+		height:19px;		
+	}
+	
+	
+	#variableselect_thumbNail
+	{
+		width:131px;
+		height:21px;		
+	}
+
+
+
+	#instructionBox
+	{
+		position:absolute;
+		left:0px;
+		top:94px;
+		height:604px;
+		width:938px;
+		display:none;
+		background-color:rgba(255,255,255,0.95);
+		border-width:5px;
+		border-color:(245,245,245,1.0);
+		border-radius:15px;
+		z-index:+100;
+		padding-left:25px
+		box-shadow: 2px 2px 6px rgba(255,0,0,.2);
+		border-style:solid;
+		border-width:1px;
+	}
+	
+	
+	
+	#instructionsPara
+	{
+		position:absolute;
+		left:50px;
+		top:75px;
+		z-index:15;
+		font-size:16px;
+		color:rgba(0,0,0,1.0);	
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+	}
+	
+	
+
+	#instructionsParaInfo
+	{
+		position:absolute;
+		left:50px;
+		top:100px;
+		z-index:15;
+		font-size:13px;
+		color:rgba(0,0,0,1.0);
+		padding-right:15px;
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+	}
+	
+	
+	
+	#labelControls
+	{
+		position:absolute;
+		right:0px;
+		top:0px;
+		display:block;
+		width:74px;
+		height:21px;
+		background-position: right;
+		z-index:+10;
+		background:transparent url('images/settings.png') center top no-repeat;
+	}
+	
+	
+	
+	#labelControls:hover
+	{
+		float:right;
+		background:transparent url('images/settingsorange.png') center top no-repeat;
+	}
+
+
+
+	#embedbox
+	{
+		position:absolute;
+		right:0px;
+		top:95px;
+		height:140px;
+		width:384px;
+		display:block;
+		background:rgba(22,129,196,1.0);
+		z-index:+5;
+		padding-left:25px
+		box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+	}
+	
+	
+			
+	#controlsDiv h4 /* main screen - inner dynamic Div to 'map'*/
+	{
+		margin: 0 0 5px;
+		color: #777;
+		font-weight:bold;
+		font-size:11px;			
+	}
+	
+			
+
+	h5
+	{
+		font-size:smaller;
+		font-weight:bold;
+	}
+	
+	
+	
+	h5:hover
+	{
+		color:blue;
+		cursor:pointer;
+	}
+	
+	
+	
+	#labelSummaryGraph:hover
+	{
+		color:blue;
+		cursor:pointer;
+	}
+	
+	
+	
+	#closeButton:hover
+	{
+		cursor:pointer;
+	}
+	
+	
+	
+	.legend
+	{
+		text-align: left;
+		line-height: 20px;
+		width:95px;
+		position:absolute;
+		top:-220px;
+		left:5px;
+		z-index:9;
+	}
+	
+	
+			
+	.legend i
+	{
+		width: 16px;
+		height: 16px;
+		float: left;
+		margin-right: 8px;
+		padding:0px;
+		border:#CF0;
+		border-width:1px;		
+	}
+	
+	
+	
+	.legendText
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:9px;	
+	}
+	
+	
+	
+	.simpleGraph i
+	{
+		width: 16px;
+		height: 16px;
+		float: left;
+		margin-right: 8px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+	}	
+				
+
+
+	#unitsLabel
+	{
+		position:absolute;
+		left:6px;
+/*		top:16px;*/
+		top:4px;
+		color:#AAA;
+		font-size:12px;
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;
+	}
+	
+	
+	
+	.simpleGraph
+	{
+		background-color:white;
+		border-radius:0px;
+		position:absolute;
+		left:570px;
+		top:418px;
+		padding:10px;
+		z-index:11;
+/*		border:0px solid #CCC;*/
+	}	
+	
+	
+	
+	#simpleChart
+	{
+		position:absolute;
+		top:0px;
+		left:0px;					
+	}
+	
+	
+	
+	#legendSVGDiv /* needed:  */
+	{
+		width:330px;
+		height:250px;
+		top:408px;
+		left:570px;
+		fill-color:white;
+		background-color:rgba(255,255,255,0.95);
+		position:absolute;
+		z-index:+20;
+		padding:40px 20px 10px 0px;
+	}	
+	
+	
+	
+	.embedDiv
+	{
+		width: 300px;
+		background-color:white;
+		border-radius:0px;
+		position:absolute;
+		right:0px;
+		top:40px;
+		padding:10px;
+		border:2px solid rgba(192,192,192, 1);
+		z-index:5;
+	}
+		
+	
+	
+	#scalingBtn	
+	{
+		font-size:9px;
+		position:absolute;
+		left:15px;
+		top:60px;
+		width:135px;
+		height:20px;
+	}
+	
+	
+	
+	#fullscreenBtn	
+	{
+		font-size:9px;
+		position:absolute;
+		left:155px;
+		top:60px;
+		width:100px;
+		height:20px;
+	}
+	
+	
+	
+	#buttonEB:hover
+	{	
+		cursor:pointer;
+	}	
+	
+	
+	
+	#buttonEB
+	{	
+		position:absolute;
+		left:300px;
+		top:-60px;	
+	}	
+	
+	
+	
+	#mainChart
+	{
+		position:absolute;
+		top:0px;
+		left:0px;					
+	}
+	
+	
+	#buttonFS
+	{	
+		position:absolute;
+		left:-50px;
+		top:-65px;	
+	}
+	
+	
+	
+	div
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		font-size:18px;
+	}
+	
+	
+	#geoName
+	{
+		position:absolute;
+		left:-5px;
+		top:23px;	
+		color:#0581c9;
+		font-size:15px;
+		font-family:open_sansbold, Arial, Helvetica, sans-serif;		
+	}
+	
+	
+	
+	#graphSVGDiv /* needed:  */
+	{
+		width:330px;
+		height:255px;
+		top:100px;
+		left:570px;
+		fill-color:white;
+		background-color:rgba(255,255,255,0.95);
+		position:absolute;
+		z-index:+2;
+		padding:40px 20px 10px 0px;
+	}
+	
+	
+	
+	#controlsLabel1, #controlsLabel2 /* needed:  */
+	{
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		color:#000;
+		font-size:16px;
+	}
+	
+	
+	
+	#controlsLabel1:hover
+	{
+		color:blue;
+		cursor:pointer;
+	}
+	
+	
+	
+	#colorControls /* needed:  */
+	{
+		width:780px;
+		border-style:solid;
+		border-width:1px;
+		padding:10px;		
+		border-radius:5px;
+		background-color:#CCC;
+		border-color:#999;		
+	}
+	
+	
+	
+	.labels
+	{
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		color:#0581c9;
+		font-size:12px;
+		vertical-align:text-top;
+	}
+	
+	
+	
+	#para
+	{
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		color:#000;
+		font-size:12px;
+		vertical-align:text-top;
+	}
+	
+	
+	
+	#paraZoom /* controls dialog */
+	{
+		position:absolute;
+		width:165px;
+		left:90px;
+		top:5px;
+		color: #777;
+		font-size:10px;	
+		font-weight:bolder;	
+	}	
+	
+	
+	
+	#paraGroups /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;	
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:15px;
+		top:7px;		
+	}
+	
+	
+	
+	#divisions-drop /* controls dialog */
+	{
+		position:absolute;
+		left:15px;
+		top:30px;
+		font-size:10px;			
+	}
+	
+	
+	
+	#split-drop /* controls dialog */
+	{
+		position:absolute;
+		left:105px;
+		top:30px;
+		font-size:10px;		
+	}	
+	
+	
+	
+	#paraPalette	 /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;	
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:15px;
+		top:67px;	
+	}
+	
+	
+	
+	#color-drop /* controls dialog */
+	{
+		position:absolute;
+		left:15px;
+		top:90px;
+		font-size:10px;			
+	}	
+	
+	
+	#paraLimits	 /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;	
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:120px;
+		top:67px;	
+	}
+	
+	
+	
+	#range-drop /* controls dialog */
+	{
+		position:absolute;
+		left:120px;
+		top:90px;
+		font-size:10px;	
+		disabled:true;		
+	}	
+	
+	
+	#paraOpacity /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:15px;
+		top:127px;
+	}
+	
+	
+	
+	#opacitySlider /* controls dialog */
+	{
+		position:absolute;
+		width:200px;
+		left:15px;
+		top:150px;	
+	}
+	
+	
+	
+	#paraLight /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:20px;
+		top:175px;		
+	}	
+	
+	
+	
+	#paraDark /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;		
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+		position:absolute;
+		left:170px;
+		top:175px;		
+	}
+	
+	
+	
+	.background /* controls dialog */
+	{
+		color: #777;
+		font-size:10px;	
+		font-weight:bolder;
+		position:absolute;
+		left:15px;
+		top:5px;		
+	}
+	
+	
+	
+	#dialogDisplayControls
+	{	
+		background:rgba(255,255,255,0.3);
+	}
+	
+	
+	
+	#tinyURL /* embed dialog */
+	{
+		position:absolute;
+		left:110px;
+		top:30px;	
+	}
+		
+	
+	
+	#tinyURLCheck /* embed dialog */
+	{
+		position:absolute;
+		left:160px;
+		top:27px;	
+	}
+	
+	
+	
+	#URLText /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:5px;
+		font-size:10px;	
+	}
+	
+	
+	
+	#URLText2 /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:30px;
+		font-size:10px;	
+	}
+	
+	
+	
+	#URLTextBox /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:60px;	
+		width:175px;
+		font-size:10px;	
+	}
+	
+	
+	
+	#HTMLText /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:95px;	
+		font-size:10px;	
+	}
+	
+	
+	
+	#HTMLText2 /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:120px;	
+		font-size:10px;	
+	}
+	
+	
+	
+	#HTMLTextBox /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:150px;	
+		width:175px;
+		font-size:10px;		
+	}
+	
+	
+	
+	#ShareText /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:190px;	
+		font-size:10px;	
+	}
+	
+	
+	
+	#buttonFB /* embed dialog */
+	{
+		position:absolute;
+		left:5px;
+		top:220px;
+	}
+	
+	
+	
+	#buttonTwit /* embed dialog */
+	{
+		position:absolute;
+		left:0px;
+		top:220px;	
+	}
+	
+	
+		
+	.footnotes
+	{
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		color:#000;
+		font-size:12px;
+		vertical-align:text-top;
+		text-align:left;
+	}
+	
+	
+	
+	#footnote4 
+	{
+		font-weight:bold;
+	}
+	
+	
+	
+	#graph-drop /* main screen */
+	{
+		position:absolute;				
+		right:-5px;
+		top:0px;		 
+		height:15px;
+		width:100px;	
+		border:solid 1px #e5e5e5;
+		z-index:+12;	
+	}
+	
+	
+	
+	.srcInfo
+	{	
+		font-size:11px;
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		color:#0581c9;
+	}
+	
+	
+	#srcLabel1
+	{	
+		
+		position:absolute;
+		left:10px;
+		top:3px;
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+	}
+	
+	
+	#srcLabel2
+	{	
+		position:absolute;
+		left:10px;
+		top:16px;
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+	}
+	
+	
+	#srcLabel3
+	{	
+		position:absolute;
+		right:10px;
+		top:3px;
+		text-decoration: none;
+		font-family:open_sansregular, Arial, Helvetica, sans-serif;
+	}
+	
+	
+	
+	#srcLabel3:hover
+	{	
+		color:orange;
+		cursor:pointer;	
+	}
+	
+	
+	
+	.selectList
+	{
+    	font-size: 50%;
+	}
+	
+	
+	
+	select
+	{
+    	font-size: 7pt;
+	}
+	
+	
+	
+	.selectElement /* controls dialog */
+	{
+		font-family:open_sanslight, Arial, Helvetica, sans-serif;
+		font-size: 10pt;
+		font-weight: normal;
+	}
+
+
+		
+	#ieMsg
+	{
+		margin: 0px auto;
+		width:976px;
+	}
+	
+	
+	
+		
+	/*
+	Theme Name: jqueryui-com
+	Template: jquery
+	*/
+	a,
+	.title
+	{
+		color: #B24926;
+	}
+	
+	
+	
+	#content a:hover 
+	{
+		color: #F7931E;
+	}
+	
+	
+	
+	#banner-secondary p.intro
+	{
+		padding: 0;
+		float: left;
+		width: 50%;
+	}
+	
+	
+	
+	#banner-secondary .download-box
+	{
+		border: 1px solid #aaa;
+		background: #333;
+		background: -moz-linear-gradient(left, #333 0%, #444 100%);
+		background: -webkit-linear-gradient(left, #333 0%, #444 100%);
+		background: -o-linear-gradient(left, #333 0%, #444 100%);
+		background: linear-gradient(to right, #333 0%, #444 100%);
+		float: right;
+		width: 40%;
+		text-align: center;
+		font-size: 20px;
+		padding: 10px;
+		border-radius: 5px;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+	}
+	
+	
+	
+	#banner-secondary .download-box h2
+	{
+		color: #71D1FF;
+		font-size: 26px;
+	}
+	
+	
+	 
+	#banner-secondary .download-box .button
+	{
+		float: none;
+		display: block;
+		margin-top: 15px;
+	}
+	
+	
+	
+	#banner-secondary .download-box p
+	{
+		margin: 15px 0 5px;
+	}
+	
+	
+	
+	#banner-secondary .download-option
+	{
+		width: 45%;
+		float: left;
+		font-size: 9px;
+	}
+	
+	
+	
+	#banner-secondary .download-legacy
+	{
+		float: right;
+	}
+	
+	
+	
+	#banner-secondary .download-option span
+	{
+		display: block;
+		font-size: 14px;
+		color: #71D1FF;
+	}
+	
+	
+	#content .dev-links
+	{
+		float: right;
+		width: 30%;
+		margin: -15px -25px .5em 1em;
+		padding: 1em;
+		border: 1px solid #666;
+		border-width: 0 0 1px 1px;
+		border-radius: 0 0 0 5px;
+		box-shadow: -2px 2px 10px -2px #666;
+	}
+	
+	
+	
+	#content .dev-links ul
+	{
+		margin: 0;
+	}
+	
+	
+	#content .dev-links li
+	{
+		padding: 0;
+		margin: .25em 0 .25em 1em;
+		background-image: none;
+	}
+	
+	
+	
+	.demo-list
+	{
+		float: right;
+		width: 25%;
+	}
+	
+	
+	
+	.demo-list h2 {
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+	
+	
+	
+	#content .demo-list ul {
+		width: 100%;
+		border-top: 1px solid #ccc;
+		margin: 0;
+	}
+	
+	
+	
+	#content .demo-list li {
+		border-bottom: 1px solid #ccc;
+		margin: 0;
+		padding: 0;
+		background: #eee;
+	}
+	
+	
+	
+	#content .demo-list .active
+	{
+		background: #fff;
+	}
+	
+	
+	
+	#content .demo-list a
+	{
+		text-decoration: none;
+		display: block;
+		font-weight: bold;
+		font-size: 13px;
+		color: #3f3f3f;
+		text-shadow: 1px 1px #fff;
+		padding: 2% 4%;
+	}
+	
+	
+	
+	.demo-frame
+	{
+		width: 70%;
+		height: 350px;
+	}
+	
+	
+	
+	.view-source a
+	{
+		cursor: pointer;
+	}
+	
+	
+	
+	.view-source > div
+	{
+		overflow: hidden;
+		display: none;
+	}
+	
+	
+	
+	@media all and (max-width: 600px)
+	{
+		#banner-secondary p.intro,
+		#banner-secondary .download-box
+		{
+			float: none;
+			width: auto;
+		}
+	
+		#banner-secondary .download-box
+		{
+			overflow: auto;
+		}
+	}
+	
+	
+	@media only screen and (max-width: 480px)
+	{
+		#content .dev-links
+		{
+			width: 55%;
+			margin: -15px -29px .5em 1em;
+			overflow: hidden;
+		}
+	}
+
+	

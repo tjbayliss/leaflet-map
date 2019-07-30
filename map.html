@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+
+            <title id="innerTabTitle">	
+            </title>
+
+            <meta charset="utf-8" />        	
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <link rel="stylesheet" href="./lib/leaflet.css" />
+            <link rel="stylesheet" href="./lib/style.css" />
+            <link rel="stylesheet" href="./lib/l.geosearch.css" />
+            <link rel="stylesheet"href="./lib/jquery-ui-1.9.2.custom.min.css">
+            
+            <link rel="stylesheet" href="./lib/jquery-ui.css" />
+
+            <!--[if lte IE 8]>
+            <link rel="stylesheet" href="./lib/leaflet.ie.css" />
+            <![endif]-->   
+
+            <script src="./lib/leaflet.js"></script>
+            <script type="text/javascript" src="./lib/d3.v3.min.js"></script>
+            <script src="./lib/jquery-1.9.1.js"></script>
+            <script src="./lib/jquery-ui.js"></script>
+            <script src="./lib/leaflet-src.js"></script>
+            
+            <script src="./lib/webtrends.js"></script>
+ 
+			<!-- LIVE DATA -->   
+            <script type="text/javascript" src="./lib/config.js"></script>                     
+			<script type="text/javascript" src="./lib/data.json"></script> 
+
+            <script type="text/javascript" src="./lib/leaflet-hash.js"></script>
+            <script src="./lib/colorbrewer.js"></script>
+            <script src="./lib/l.control.geosearch.js"></script>
+            <script src="./lib/l.geosearch.provider.google.js"></script>
+            <script src="./lib/ss.js"></script>
+            <script src="./lib/jquery-ui-1.9.2.custom.min.js"></script>                             
+            <script src="./lib/modernizr.js"></script> 
+            <script src="./lib/leaflet-pip.js"></script> 
+           	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>	<!--Stamen map tiles -->                        
+			<script type="text/javascript" src="./lib/jquery-url-shortener.js"></script>  
+			<script type="text/javascript" src="./lib/jquery.ui.touch-punch.min.js"></script> 
+            
+        </head>
+
+        <body id="mainBody">
+                    
+            <div id="loading" display="inline" style="position:absolute; left:0px; top:0px; width:940px; height:700px; border-style:solid; border-width:0px;">
+        
+                <div id="bannerTemp">
+                	<h2 id="bannerTitleTemp"></h2>
+                	<p id="bannerSubTitleTemp"></p>
+                </div>             
+                        
+                <img id="dataLoadingGif" src="./lib/images/loading.gif"></img>
+                <br>  <br>
+                <label id="dataLoadingLbl">Your data are currently loading. <br><br> This visualisation will be ready soon ... </label>
+            </div>
+
+			<div id="main-wrapper" style="display:none"> 
+
+				<div id="content" style="display:none">
+        
+                    <div id="mainDiv" class="mainDiv">
+                    
+                        <div id="map">
+                        </div>                    
+
+			            <div id="currentYearBg">
+                        </div> 
+
+			            <div id="clearBg">
+                        </div>                        
+                        
+                        <label class="labels" id="currentYear"></label> 
+                        <label id="fixedDivisions1"></label>       
+                        <label id="fixedDivisions2"></label>                   
+
+			            <div id="fixedDivisionsBg">
+                        </div>                    
+                
+    
+                        <div id="embedbox" display='none'>
+                            <a href='javascript:embedHide()' id="close" title="close box"></a>
+                            <p id="embedPara">Paste HTML to embed in website</p>
+                            <input type='text' id='embedurl' name='iframe'/>
+                            <p id="embedPara2">Paste link into an email </p>
+                            <input type='text' id='embedurl2' name='iframe'/>
+                        </div>                        
+    
+                        <div id="infobox" display='none'>
+                            <a href='javascript:infoHide()' id="close" title="close box"></a>
+                            <p id="infoPara"></p>
+                            <p id="infoParaInfo"></p>
+							<div id="infobg"></div>
+                        </div> 
+                        
+                        <div id="#legendTip" display='inline'>
+                        	<label id="tooltipText">Count</label>
+                        </div>                      
+    
+                        <div id="instructionBox" display='none'>
+                            <a href='javascript:instructionBoxHide()' id="infoclose" title="close instructions"></a>
+                            <p id="instructionsPara">Instructions to users of this mapping tool</p>
+                            <p id="instructionsParaInfo">
+							User can interact with this application by clicking on a geography entity on the map. This will illustrate which data band that area falls within on the legend to the lower-right corner of the screen.
+                            Similarly, the user may hover the cursor over the legend to highlight the geographic entities on the main map that are present within the selected data band. Using either of these interactions will also highlight the ranking index of that individual geographic entity within the data of the selected data variable
+                            - and selected year if appropriate - in the ranking graph to the top-right of the interactive. Finally, moving the cursor over the ranking graph will highlight the selected geography entity in the main map area as well as the data band of the legend within which it falls. <br><br> 
+                            Users may also modify the view by any of the following means: <br></br>
+                            1. <img id="variableselect_thumbNail" src="./lib/images/selectvariable.png"</img> selects a different data variable to view using the 'Choose a data variable to view' selection list, </br> 
+                            2. <img id="areaselect_thumbNail" src="./lib/images/areaselect.png"</img> selects a specific geography entity using the 'select an area' selection list, </br>      
+                            3. <img id="graphtype_thumbNail" src="./lib/images/graphtype.png"</img> selects a different graphing type in the 'Graph type' selection list , </br>            
+                            4. <img id="geosearch_thumbNail" src="./lib/images/geosearch.png"</img> allows users to manually enter an individual postcode, address or area in the geosearch tool , </br>                  
+                            5. viewing the time series of a dataset by pressing the 'Play' button to the lower-left of the mapped area (a 'Pause' button will then be presented to stop the animation), </br>
+                            6. <img id="settings_thumbNail" src="./lib/images/settings.png"</img> opens the 'Settings' dialog to alter the display settings of the map, legend and graph areas (e.g. changing the colour palette and opacity, number of data divisions, the splitting algorithm used, where data limits are taken from or whether background tiles are shown).</br>
+                            <br>                           
+                            
+                            Users can also:
+                            <br></br>
+                            - view information relating to each individual dataset by selection the <i>'i'</i> information button to the top-right of the title bar </br> 
+                            - link views to other users via the Embed <img id="embed_thumbNail" src="./lib/images/embed_thumbnail.png"</img>, Facebook <img id="fb_thumbNail" src="./lib/images/fb_thumbnail.png"</img> and Twitter <img id="twitter_thumbNail" src="./lib/images/twitter_thumbnail.png"</img> buttons.</br>
+                            
+                            </br>
+							Press the 'help' button <img id="help_thumbNail" src="./lib/images/help_thumbnail.png"</img> to view these instructions again.
+                            
+                             </p>
+							<div id="instructionbg"></div>
+                            
+                        </div>
+                    
+                        <div id="banner">
+                        
+                        	<label id="intermediateTitle"></label>
+                            
+                        	<h2 id="bannerTitle">Title here</h2>
+                            <p id="bannerSubTitle"></p>
+                            
+                            <div>
+                            </div>
+                        	<a href='javascript:makeTinyUrl()' id="twitter" title="twitter link"></a>
+                            <a href='javascript:makeFace()' id="face" title="facebook link"></a>
+                            <a href='javascript:showEmbed()' id="embed" title="embed link"></a>
+                            <a href='javascript:showinfo()' id="infoimg" title="metadata"></a>
+                            <a href='javascript:showhelp()' id="helpimg" title="help"></a>
+                            <a href='#' id="line"></a>
+                        </div> 
+                        
+                        <div id="bannersub">
+                        	<a href='javascript:showinfo()' id="Metadata" title="Metadata"></a>
+                        </div>          
+                        <div id="dv-droplabel">Choose a data variable to view</div>
+					<!--	<select id="dv-drop" onChange="reint();"></select>-->
+						<select id="dv-drop" onChange="grabFixedDataDivisions('dv');"></select>
+                        <select id="geoUnit-drop" value="Select an area" onchange="selectGEOUNIT(this.value, 'drop');"></select>                        
+                                  
+                    </div>
+                    
+                    <div id="side">
+                    </div><!-- background transparency for the graph area -->
+                    
+                    
+					<div id="graphSVGDiv">     			
+    
+						<select id="graph-drop" style="position:absolute;" onChange="reint(); "></select>
+						<label class="labels" id="hoverPrompt">Now select an area on the map</label>
+	                    <label id="graphTypeLabel">Graph type:</label>
+
+					</div> 
+                    
+					<div id="legendSVGDiv"> 
+                            <label class="labels" id="fixedRangesLabel">Fix data ranges</label>
+							<input type="checkbox" id="fixedRanges" onClick="grabFixedDataDivisions('fr');"> 
+                            <label class="labels" id="fixedYear">(YEAR)</label>                   
+    				</div>                    
+                    
+                    <div id="mapControlsDiv">
+                        
+                        <div>
+                        
+                            <div class="timeControls" id="timeSlider">
+                            </div>
+                            
+                            <label class="labels" id="startYear"></label>
+                            <label class="labels" id="endYear"></label>
+                            <a href="#" tabindex="1" id="PlayPauseBtn" title="Play"></a>
+                            <label class="labels" id="loopLabel">Loop</label>
+                            <input type="checkbox" id="loop" checked="true">
+                            <label class="labels" id="boundariesLabel">Boundaries</label>
+                            <input type="checkbox" id="boundaries" checked="true" onClick="reint();">
+                        
+                        </div>
+                    
+                    <div id="attribution">
+						<label>Powered by </label>
+                    	<a class="attribution" href="http://leafletjs.com">Leaflet</a><label> — Map tiles by </label>
+                        <a class="attribution" href="http://stamen.com">Stamen Design</a><label>, under </label>
+                        <a class="attribution" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a><label>. Data by</label>
+                        <a class="attribution" href="http://openstreetmap.org">OpenStreetMap</a><label>, under </label>
+                        <a class="attribution" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a><label>.</label>
+                    </div>
+                    
+                    </div><!-- end 'mapControlsDiv' -->
+                    
+                    <div id="footer"> 
+                    
+                            <label class="srcInfo" id="srcLabel1"></label>
+                            <label class="srcInfo" id="srcLabel2">Contains Ordnance Survey data © Crown copyright and database right 2014</label>
+							<a class="srcInfo" id="srcLabel3" onclick="window.open('http://www.ons.gov.uk/ons/interactive/index.html');">See more from the ONS Data Visualisation Centre</a>
+    
+                    </div> 
+      
+                    <!-- Display controls Div dialog declared here ... -->
+                    <div class="dialog" id="dialogDisplayControls" title="Display controls" style="display:none">
+                    
+                            <input type="checkbox" id="BGTilesCheck" checked="true" onClick="tiles();">
+                            <input type="checkbox" id="colourInvertCheck" onClick="reint();">
+                    </div>  
+                                
+                    <!-- Embed/Share Div dialog declared here ... -->     
+                    <div class="dialog" id="dialogEmbedControls" title="Share view ..." style="display:none">
+                    </div>
+
+	        </div> <!-- end 'content' -->
+            
+            <div id="ieMsg" style="display:none">
+
+                <div id="loading">
+                    <img id="dataLoadingGif" src="./lib/images/loading.gif"></img>
+                </div>
+   
+                <div id="browserImg" align="center">
+                	<img id="thumbNail" src="./lib/images/alt_large.jpg"</img>
+                </div>
+                
+				<div id="browserMsg" align="center">
+
+                    <label style="font-size:25px">
+                    	</br></br>!<br><br> 
+                    </label>
+                
+                    <label style="font-size:15px">
+                        For a safer, faster, better experience online you should upgrade your browser.</br></br>
+                        You would then be able to play with this lovely interactive graphic.</br></br>
+                        <a style="color:rgba(255,255,255,1)" href="https://www.gov.uk/support/browsers" target="_blank">Find out more about browsers</a>
+                    </label>
+                
+                </div>
+
+            </div>
+            
+        </div> <!-- end 'wrapper' -->
+        
+        <script type="text/javascript" src="./lib/script.js"></script> 
+        
+        <script>
+			
+				/* analytics */
+	
+				/*Google*/
+				
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-37894017-1']);
+				_gaq.push(['_trackPageview']);
+				
+				
+				(function() {
+				var ga = document.createElement('script'); ga.type =
+				'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ?
+				'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+				})();
+				
+				
+				
+				/*webtrends*/
+				
+				var _tag=new WebTrends();
+				_tag.dcsGetId();
+				//]]>
+			
+			</script>
+            
+            <script type="text/javascript">
+			
+				//<![CDATA[
+				_tag.dcsCustom=function(){
+				// Add custom parameters here.
+				//_tag.DCSext.param_name=param_value;
+				}
+				_tag.dcsCollect();
+				
+				</script>
+				
+				<noscript>
+				<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1"
+				src="//statse.webtrendslive.com/dcsay0hycvz5bd4kzkvzlhgdu_5j1u/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.statistics.gov.uk"/>
+				</div>
+				</noscript>
+			
+			</script>         
+        
+    </body>
+
+</html>

@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+
+	<html lang="en">
+	
+    	<head>
+
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+			<title id="tabTitle"> </title>
+
+				<style type="text/css">
+                        
+                        body
+						{
+                            background:rgb(250,250,250);	
+                        }
+						
+						
+                        
+                        @font-face
+						{
+                            font-family: 'open_sanslight';		
+                            src: url('./lib/fonts/OpenSans-Light-webfont.woff') format('woff');
+                            font-weight: normal;
+                            font-style: normal;
+                        }
+						
+						
+                        
+                        @font-face
+						{
+                            font-family: 'open_sansregular';		
+                            src: url('./lib/fonts/OpenSans-Regular-webfont.woff') format('woff');
+                            font-weight: normal;
+                            font-style: normal;
+                        }
+                        
+						
+						
+                        #intro
+						{
+                            position:relative;
+                            width: 940px;
+                            margin: 5px 15px  5px  5px auto;	
+                            font-family:open_sanslight, Arial, Helvetica, sans-serif;
+                            font-size:13px;
+                            color: #333;
+							padding:10px -1px 15px 5px;                      
+                        }
+						
+						
+                        
+                        p
+						{
+                            padding:5px 10px 5px 10px;	
+                        }
+						
+						
+                        
+                        #wrapper
+						{
+                            position:relative;
+                            width: 940px;
+                            margin: 0px auto;
+                            background:#FFF;
+                            box-shadow: 0px 0px 6px rgb(221, 221, 221);
+                                
+                        }
+						
+						
+						
+                        #title
+						{
+                            background:#0581c9;
+                            padding:5px 10px 5px 10px;
+                            color:#fff;
+                            font-size:30px;
+                            font-family:open_sansregular, Arial, Helvetica, sans-serif;
+                            padding:5px 10px 5px 10px;
+                            border-bottom:1px solid #FFFFFF;
+                        }
+						
+						
+                        
+                        #title2
+						{
+                            background:#0581c9;
+                            padding:5px 10px 5px 10px;
+                            color:#fff;
+                            font-size:20px;
+                            font-family:open_sansregular, Arial, Helvetica, sans-serif;
+                            border-bottom:1px solid #FFFFFF;
+							z-index:0;
+                        }
+                        
+						
+						
+                        .twothirds
+						{
+                            width: 600px;
+                        }
+						
+						
+                        
+                        #reg {
+                        
+                            float: right;
+                            padding: 5px 5px;
+                        }
+                        
+						
+						
+                        .coll
+						{
+                                    
+                        }
+                        
+						
+						
+                        #collapse
+						{
+                            position:absolute;
+                            top:10px;
+                            right:10px;
+                            display:block;
+                            width:100px;
+                            height:30px;
+                            background-position: right;
+                            background:transparent url('./lib/images/collapsewhite.png') center top no-repeat;
+                        
+                        }
+						
+						
+                        
+                        #collapse:hover
+						{                            
+                            float:right;
+                            background:transparent url('./lib/images/collapseornge.png') center top no-repeat;
+                        }
+                        
+						
+						
+                        #expand
+						{
+                            position:absolute;
+                            top:10px;
+                            right:10px;
+                            display:block;
+                            width:100px;
+                            height:30px;
+                            background-position: right;
+                            background:transparent url('./lib/images/expandwhite.png') center top no-repeat;
+                        
+                        }
+						
+                        
+						
+                        #expand:hover
+						{                            
+                            float:right;
+                            background:transparent url('./lib/images/expandorange.png') center top no-repeat;                        
+                        }
+						
+						
+						
+						#thmbnl
+						{
+							padding: 0px 0px 0px 0px;	
+							width:180px;
+							height:120px;
+						}
+                        
+                
+                </style>
+
+            	<script type="text/javascript" src="./lib/jquery-1.9.1.js"></script>
+
+  
+				<!-- LIVE DATA -->   
+            	<script type="text/javascript" src="./lib/config.js"></script>  
+
+     
+		</head>
+
+        <body>
+                <div id="wrapper">
+                
+                	<a id="collapse" class="coll" title="collapse commentary"></a>
+                	<a id="expand" class="coll" title="expand commentary"></a>
+               
+               		<div id="title"></div>
+                
+                	<div id="intro">
+                	</div>               
+
+            		<div id="title2"><label id="interTitle"></label></div>
+
+	                <iframe width='940px' height='700px' src="map.html" scrolling="no" frameborder="0"></iframe>
+        
+        		</div>
+                
+				<script>						
+				
+					$('#expand').hide();
+					
+					$('.coll').on('click',function(){
+						$('#intro').toggle('slide');
+						$('#collapse').toggle(); 
+						$('#expand').toggle();         
+					});				
+					
+					document.getElementById('tabTitle').innerHTML = tabTitle;
+					document.getElementById('title').innerHTML = LeadInQuestion;
+					document.getElementById('interTitle').innerHTML = intermediateTitle;
+					document.getElementById('intro').innerHTML = intro;
+            
+           		</script>      
+            
+        </body>
+        
+	</html>
